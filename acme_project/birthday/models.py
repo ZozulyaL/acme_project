@@ -2,6 +2,8 @@ from django.db import models
 
 # Импортируется функция-валидатор.
 from .validators import real_age
+# Импортируем функцию reverse() для получения ссылки на объект.
+from django.urls import reverse
 
 
 class Birthday(models.Model):
@@ -19,3 +21,6 @@ class Birthday(models.Model):
                 name='Unique person constraint',
             ),
         )
+
+    def get_absolute_url(self):
+        return reverse('birthday:detail', kwargs={'pk': self.pk})     
