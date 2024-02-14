@@ -133,3 +133,5 @@ db_old.sqlite3
 db.sqlite3
 my_venv
 Dev/acme_project/acme_project/media
+sent_emails
+media
